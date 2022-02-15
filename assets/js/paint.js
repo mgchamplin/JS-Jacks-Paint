@@ -19,11 +19,8 @@ function removeOpacity(event) {
         this.classList.remove('dim');
     }
 
-    let element = document.getElementById('ppg');
-        element.textContent = '';
-        
-    let color = document.getElementById('color');
-        color.textContent = ''; 
+    document.getElementById('ppg').textContent = '';
+    document.getElementById('color').textContent = '';
 
     event.preventDefault();    
 }
@@ -34,65 +31,41 @@ function changeImage(elementId) {
 }
 
 function getProductInfo(partNumber) {
-    let price;
-    let colorName;  
-    
     switch (partNumber) {
         case 'pn1':           
-            price = '$19.99'
-            colorName = 'Lime Green'
-            updatePrice(colorName, price)           
+            updatePrice('Lime Green', '$19.99')           
             break;           
         case 'pn2':
-            price = '$12.99'
-            colorName = 'Medium Brown' 
-            updatePrice(colorName, price)     
+            updatePrice('Medium Brown', '$12.99')     
             break;            
         case 'pn3':
-            price = '$11.99'
-            colorName = 'Royal Blue'   
-            updatePrice(colorName, price)   
+            updatePrice('Royal Blue', '$11.99')   
             break;   
-        case 'pn4':
-            price = '$14.99'
-            colorName = 'Bright Red'            
-            updatePrice(colorName, price)   
+        case 'pn4':        
+            updatePrice('Bright Red', '$14.99')   
             break;   
         case 'pn5':
-            price = '$9.99'
-            colorName = 'Solid White' 
-            updatePrice(colorName, price)              
+            updatePrice('Solid White', '$9.99')              
             break;   
         case 'pn6':
-            price = '$15.99'
-            colorName = 'Solid Black'   
-            updatePrice(colorName, price)            
+            updatePrice('Solid Black', '$15.99')            
             break;   
-        case 'pn7':
-            price = '$8.99'
-            colorName = 'Medium Blue'       
-            updatePrice(colorName, price)        
+        case 'pn7':    
+            updatePrice('Medium Blue', '$8.99')        
             break;   
-        case 'pn8':
-            price = '$16.99'
-            colorName = 'Light Purple'      
-            updatePrice(colorName, price)         
+        case 'pn8':      
+            updatePrice('Light Purple', '$16.99')         
             break;   
-        case 'pn9':
-            price = '$17.99'
-            colorName = 'Bright Yellow'                       
-            updatePrice(colorName, price)   
+        case 'pn9':                     
+            updatePrice('Bright Yellow', '$17.99')   
             break;   
           default:              
     }
 
     function updatePrice(colorName, price)
     {       
-        let ppg = document.getElementById('ppg');
-        ppg.textContent = price;
-        
-        let color = document.getElementById('color');
-        color.textContent = colorName;
+        document.getElementById('ppg').textContent = price;
+        document.getElementById('color').textContent = colorName;
     }
     
 }
